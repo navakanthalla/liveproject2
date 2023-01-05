@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html
+xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+</head>
+<body>
+<a href="/search">all data </a>
+<a href="/get_all_vehicle">all vehicles</a>
+<a href="/home">submit</a>
+<div>
+    <table>
+    <tr>
+    <th>Id</th><th>vehicleNo</th><th>bags</th><th>phoneNumber</th><th>date</th>
+    </tr>
+    <tr th:each="dat:${data}">
+    <td th:text="${dat.id}"></td>
+     <td th:text="${dat.vehicleNo}"></td>
+   <td th:text="${dat.bags}"></td>
+    <td th:text="${dat.phoneNumber}"></td>
+  <td th:text="${dat.ld}"></td>
+    </tr>
+    </table>
+    </div>
+</body>
+</html>

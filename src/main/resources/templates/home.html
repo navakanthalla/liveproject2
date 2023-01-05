@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home page</title>
+<script type="text/javascript">
+	function validateForm() {
+		var phoneno = /^\d{10}$/;
+		var x = document.getElementById("fname").value;
+		//console.log(x);
+
+		var tel = document.getElementById("phone").value;
+		if (x <= 0) {
+			alert("bags count must be greater than 0");
+			return false;
+		}
+		if (!(tel.match(phoneno))) {
+			alert("enter valid mobile number");
+			return false;
+		}
+console.log(tel+" hiii");
+		return true;
+
+	}
+</script>
+</head>
+<body>
+	<a href="/search">all data </a>
+	<a href="/get_all_vehicle">all vehicles</a>
+	<a href="/home">submit</a>
+	<div>
+
+		<h1>Form</h1>
+		<form name="Form" action="#" th:action="@{/submit-data}"
+			th:object="${DataaModel}" onsubmit="return validateForm()"
+			method="post">
+			<p>
+				Vehicle No: <input type="text" th:field="*{vehicleNo}"
+					required="required" />
+			</p>
+			<p>
+				Bags Count: <input type="number" th:field="*{bagscount}"
+					th:id="fname" required="required" />
+			</p>
+			<p>
+				Phone number: <input type="tel" th:field="*{phoneNumber}"
+					required="required" th:id="phone" />
+			</p>
+			<p>
+				<input type="submit" value="Submit" /> <input type="reset"
+					value="Reset" />
+			</p>
+		</form>
+	</div>
+</body>
+</html>

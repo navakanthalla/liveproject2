@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function validation(){
+	var vehicle_no=document.getElementbyId("say").value;
+	console.log(vehicle_no);
+}</script>
+</head>
+<body>
+<a href="/search">all data </a>
+<a href="/get_all_vehicle">all vehicles</a>
+<a href="/home">submit</a>
+	<div>
+		<div>
+			<p>Get by vehicle number</p>
+			<form action="/get_by_vehicle" method="get">
+				<label for="say">Vehicle N0:</label> <input name="say" id="say"
+					type="text" required="required"/> <input type="submit" value="submit">
+			</form>
+		</div>
+		<div>
+		<p>Enter date range</p>
+		<form action="/get_by_date_range" method="get"> 
+		<label for="startdate">Start Date</label> <input type="date" id="sd" name="startdate" required="required">
+		<label for="enddate">End Date</label> <input type="date" id="ed" name="enddate" required="required">
+		<input type="submit" value="submit">
+		</form>
+		</div>
+		
+		<a href="/get_all_data" > get all data</a>
+	</div>
+</body>
+</html>
